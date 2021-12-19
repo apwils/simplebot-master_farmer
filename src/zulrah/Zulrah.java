@@ -1,6 +1,6 @@
-package masterFarmer;
+package zulrah;
 
-import masterFarmer.tasks.*;
+import zulrah.tasks.*;
 import simple.hooks.scripts.Category;
 import simple.hooks.scripts.ScriptManifest;
 import simple.hooks.scripts.task.Task;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@ScriptManifest(author = "Apwils", name = "Apwils | Master Farmer", category = Category.THIEVING, version = "1.0",
-        description = "Start at Draynor bank, have last preset set with around 5 lobsters in inventory.", discord = "Andrew w#0376", servers = { "Zaros" })
+@ScriptManifest(author = "Apwils / EvanGecko", name = "Apwils x EvanGecko | Zulrah", category = Category.MONEYMAKING, version = "1.0",
+        description = "Lorem ipsum.", discord = "Andrew w#0376", servers = { "Zaros" })
 
-public class MasterFarmer extends TaskScript {
+public class Zulrah extends TaskScript {
+
     private List tasks = new ArrayList();
-
 
     private String status;
     private long startTime;
@@ -42,9 +42,7 @@ public class MasterFarmer extends TaskScript {
     public void onExecute() {
         startTime = System.currentTimeMillis();
         tasks.addAll(Arrays.asList(
-                new Bank(ctx),
-                new Eat(ctx),
-                new Thieve(ctx)
+                new Placeholder(ctx)
         ));
     }
 
@@ -73,7 +71,7 @@ public class MasterFarmer extends TaskScript {
         g.drawString("v. " + "1.0", 160, 20);
 
         g.setColor(Color.decode("#787878"));
-        g.drawString("Apwils | Master Farmer", 12, 20);
+        g.drawString("Apwils x EvanGecko | Zulrah", 12, 20);
         g.drawString("Time: " + ctx.paint.formatTime(System.currentTimeMillis() - startTime), 14, 42);
         g.drawString("Status: " + status, 14, 56);
 //        g.drawString("Laps: " + laps + " (" + ctx.paint.valuePerHour(laps, startTime) + ")", 14, 70);
